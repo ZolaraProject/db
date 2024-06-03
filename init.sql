@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS gap_fills (
 );
 
 CREATE TABLE IF NOT EXISTS user_profiles (
-    user_id INTEGER PRIMARY KEY,
+    user_id INTEGER,
     language_id INTEGER,
     level_id INTEGER,
     action_id INTEGER,
