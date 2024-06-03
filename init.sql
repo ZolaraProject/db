@@ -20,8 +20,9 @@ CREATE TABLE IF NOT EXISTS interests (
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    email VARCHAR NOT NULL,
-    password VARCHAR NOT NULL
+    email VARCHAR NOT NULL UNIQUE,
+    password VARCHAR NOT NULL,
+    username VARCHAR NOT NULL UNIQUE,
 );
 
 
