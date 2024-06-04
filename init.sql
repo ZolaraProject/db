@@ -1,41 +1,41 @@
 CREATE TABLE IF NOT EXISTS languages (
     id SERIAL PRIMARY KEY,
-    name VARCHAR NOT NULL
+    name VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS actions (
     id SERIAL PRIMARY KEY,
-    name VARCHAR
+    name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS levels (
     id SERIAL PRIMARY KEY,
-    proficiency VARCHAR
+    proficiency VARCHAR(50) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS interests (
     id SERIAL PRIMARY KEY,
-    name VARCHAR
+    name VARCHAR(255) NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
-    email VARCHAR NOT NULL UNIQUE,
-    password VARCHAR NOT NULL,
-    username VARCHAR NOT NULL UNIQUE
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE
 );
 
 
 CREATE TABLE IF NOT EXISTS linguistic_concepts (
     id SERIAL PRIMARY KEY,
-    name VARCHAR,
+    name VARCHAR(50) NOT NULL UNIQUE,
     linguistic_type VARCHAR
 );
 
 CREATE TABLE IF NOT EXISTS flashcards (
     id SERIAL PRIMARY KEY,
-    word VARCHAR NOT NULL,
-    image_url VARCHAR NOT NULL,
+    word VARCHAR(50) NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
@@ -44,7 +44,7 @@ CREATE TABLE IF NOT EXISTS flashcards (
 
 CREATE TABLE IF NOT EXISTS gap_fills (
     id SERIAL PRIMARY KEY,
-    answer VARCHAR NOT NULL,
+    answer VARCHAR(255) NOT NULL,
     text TEXT NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
@@ -53,9 +53,9 @@ CREATE TABLE IF NOT EXISTS gap_fills (
 );
 
 CREATE TABLE IF NOT EXISTS user_profiles (
-    user_id INTEGER,
-    language_id INTEGER,
-    level_id INTEGER,
+    user_id INTEGER NOT NULL,
+    language_id INTEGER NOT NULL,
+    level_id INTEGER NOT NULL,
     action_id INTEGER,
     interest_id INTEGER,
     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -67,12 +67,12 @@ CREATE TABLE IF NOT EXISTS user_profiles (
 
 CREATE TABLE IF NOT EXISTS contents (
     id SERIAL PRIMARY KEY,
-    language_id INTEGER,
+    language_id INTEGER NOT NULL,
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
 CREATE TABLE IF NOT EXISTS users_exercises (
-    user_id INTEGER,
+    user_id INTEGER NOT NULL,
     flashcard_id INTEGER,
     gap_fill_id INTEGER,
     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -82,21 +82,21 @@ CREATE TABLE IF NOT EXISTS users_exercises (
 
 CREATE TABLE IF NOT EXISTS user_mistakes (
     id SERIAL PRIMARY KEY,
-    linguistic_concept_id INTEGER,
-    user_id INTEGER,
+    linguistic_concept_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE IF NOT EXISTS actions_linguistic_concepts (
-    linguistic_concept_id INTEGER,
-    action_id INTEGER,
+    linguistic_concept_id INTEGER NOT NULL,
+    action_id INTEGER NOT NULL,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
     FOREIGN KEY (action_id) REFERENCES actions(id)
 );
 
 CREATE TABLE IF NOT EXISTS contents_actions (
-    action_id INTEGER,
+    action_id INTEGER NOT NULL,
     content_id INTEGER,
     interest_id INTEGER,
     FOREIGN KEY (action_id) REFERENCES actions(id),
