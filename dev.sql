@@ -34,7 +34,7 @@ INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", 
 INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (1, 2, 4, 1, NULL);
 INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (2, 3, 1, 2, NULL);
 INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (2, 1, 3, 2, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (4, 4, 5, 3, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (4, 2, 3, 3, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (4, 2, 3, NULL, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (4, 5, 1, 2, NULL);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 4, 5, 3, NULL);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 2, 3, 3, NULL);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 2, 3, NULL, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 5, 1, 2, NULL);
