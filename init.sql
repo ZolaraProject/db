@@ -18,11 +18,14 @@ CREATE TABLE IF NOT EXISTS interests (
     name VARCHAR(255) NOT NULL UNIQUE
 );
 
+CREATE TYPE user_role AS ENUM ('admin', 'user');
+
 CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    username VARCHAR(255) NOT NULL UNIQUE
+    username VARCHAR(255) NOT NULL UNIQUE,
+    role user_role DEFAULT 'user'
 );
 
 
