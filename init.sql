@@ -106,3 +106,14 @@ CREATE TABLE IF NOT EXISTS contents_actions (
     FOREIGN KEY (content_id) REFERENCES contents(id),
     FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
+
+CREATE TYPE event_type AS ENUM ('CREATE', 'UPDATE', 'DELETE');
+
+CREATE TABLE IF NOT EXISTS events (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER NOT NULL,
+    event_type event_type NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
