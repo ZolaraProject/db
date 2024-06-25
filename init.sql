@@ -24,15 +24,15 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     username VARCHAR(255) NOT NULL UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    role user_role DEFAULT 'user'
+    password VARCHAR(255),
+    role user_role DEFAULT 'user',
+    oauth BOOLEAN NOT NULL DEFAULT FALSE
 );
-
 
 CREATE TABLE IF NOT EXISTS linguistic_concepts (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL UNIQUE,
-    linguistic_type VARCHAR
+    linguistic_type VARCHAR(50)
 );
 
 CREATE TABLE IF NOT EXISTS flashcards (
