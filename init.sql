@@ -29,10 +29,16 @@ CREATE TABLE IF NOT EXISTS users (
     oauth BOOLEAN NOT NULL DEFAULT FALSE
 );
 
+CREATE TABLE IF NOT EXISTS linguistic_types (
+    id SERIAL PRIMARY KEY,
+    lt_name VARCHAR(255) NOT NULL UNIQUE
+)
+
 CREATE TABLE IF NOT EXISTS linguistic_concepts (
     id SERIAL PRIMARY KEY,
-    name VARCHAR(50) NOT NULL UNIQUE,
-    linguistic_type VARCHAR(50)
+    lc_name VARCHAR(255) NOT NULL UNIQUE,
+    linguistic_type_id INTEGER,
+    FOREIGN KEY (linguistic_type_id) REFERENCES linguistic_types(id)
 );
 
 CREATE TABLE IF NOT EXISTS flashcards (
