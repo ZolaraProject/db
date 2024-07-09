@@ -10,7 +10,7 @@ SELECT setval(pg_get_serial_sequence('actions', 'id'), coalesce((SELECT MAX(id) 
 
 INSERT INTO "interests" ("id", "name") VALUES (1, 'interest0');
 INSERT INTO "interests" ("id", "name") VALUES (2, 'interest1');
-INSERT INTO "interests" ("id", "name") VALUES (3, 'interes2');
+INSERT INTO "interests" ("id", "name") VALUES (3, 'interest2');
 SELECT setval(pg_get_serial_sequence('interests', 'id'), coalesce((SELECT MAX(id) FROM interests), 0) + 1, false);
 
 INSERT INTO "languages" ("id", "name") VALUES (1, 'English');
@@ -28,13 +28,11 @@ INSERT INTO "levels" ("id", "proficiency") VALUES (5, 'C1');
 INSERT INTO "levels" ("id", "proficiency") VALUES (6, 'C2');
 SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) FROM levels), 0) + 1, false);
 
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (1, 1, 5, 1, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (1, 1, 5, 2, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (1, 1, 5, NULL, 3);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (1, 2, 4, 1, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (2, 3, 1, 2, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (2, 1, 3, 2, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 4, 5, 3, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 2, 3, 3, NULL);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 2, 3, NULL, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id", "interest_id") VALUES (3, 5, 1, 2, NULL);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 5, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 5, 2);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 2, 4, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (2, 3, 1, 2);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (2, 1, 3, 2);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 4, 5, 3);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 2, 3, 3);
+INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 5, 1, 2);

@@ -37,7 +37,6 @@ CREATE TABLE IF NOT EXISTS linguistic_concepts (
 
 CREATE TABLE IF NOT EXISTS flashcards (
     id SERIAL PRIMARY KEY,
-    word VARCHAR(50) NOT NULL,
     image_url VARCHAR(255) NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
@@ -47,7 +46,6 @@ CREATE TABLE IF NOT EXISTS flashcards (
 
 CREATE TABLE IF NOT EXISTS gap_fills (
     id SERIAL PRIMARY KEY,
-    answer VARCHAR(255) NOT NULL,
     text TEXT NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
@@ -55,18 +53,30 @@ CREATE TABLE IF NOT EXISTS gap_fills (
     FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
+CREATE TABLE IF NOT EXISTS answers (
+    gap_fill_id INTEGER,
+    flashcard_id INTEGER,
+    answer VARCHAR(255),
+    answer_order INTEGER
+);
+
 CREATE TABLE IF NOT EXISTS user_profiles (
     user_id INTEGER NOT NULL,
     language_id INTEGER NOT NULL,
     level_id INTEGER NOT NULL,
-    action_id INTEGER,
-    interest_id INTEGER,
+    action_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (language_id) REFERENCES languages(id),
     FOREIGN KEY (level_id) REFERENCES levels(id),
-    FOREIGN KEY (action_id) REFERENCES actions(id),
-    FOREIGN KEY (interest_id) REFERENCES interests(id)
+    FOREIGN KEY (action_id) REFERENCES actions(id)
 );
+
+CREATE TABLE IF NOT EXISTS users_interests (
+    user_id INTEGER NOT NULL,
+    interest_id INTEGER NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (interest_id) REFERENCES interests(id)
+)
 
 CREATE TABLE IF NOT EXISTS contents (
     id SERIAL PRIMARY KEY,
@@ -87,8 +97,10 @@ CREATE TABLE IF NOT EXISTS user_mistakes (
     id SERIAL PRIMARY KEY,
     linguistic_concept_id INTEGER NOT NULL,
     user_id INTEGER NOT NULL,
+    level_id INTEGER NOT NULL,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (level_id) REFERENCES levels(id)
 );
 
 CREATE TABLE IF NOT EXISTS actions_linguistic_concepts (
