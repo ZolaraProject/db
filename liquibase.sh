@@ -33,7 +33,6 @@ sudo docker run -v ${PWD}:/liquibase/changelog -v ${PWD}/out:/out --network host
 
 # Check if diff.sql is generated
 if [ -f out/diff.sql ]; then
-    echo "\c zolara;" > diff.sql
     cat out/diff.sql >> diff.sql
     code diff.sql
 else
