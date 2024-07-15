@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS linguistic_types (
     id SERIAL PRIMARY KEY,
     lt_name VARCHAR(255) NOT NULL UNIQUE
-)
+);
 
 CREATE TABLE IF NOT EXISTS linguistic_concepts (
     id SERIAL PRIMARY KEY,
@@ -82,7 +82,7 @@ CREATE TABLE IF NOT EXISTS users_interests (
     interest_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (interest_id) REFERENCES interests(id)
-)
+);
 
 CREATE TABLE IF NOT EXISTS contents (
     id SERIAL PRIMARY KEY,
