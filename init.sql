@@ -77,7 +77,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
     FOREIGN KEY (action_id) REFERENCES actions(id)
 );
 
-CREATE TABLE IF NOT EXISTS users_interests (
+CREATE TABLE IF NOT EXISTS user_interests (
     user_id INTEGER NOT NULL,
     interest_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS contents (
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
-CREATE TABLE IF NOT EXISTS users_exercises (
+CREATE TABLE IF NOT EXISTS user_exercises (
     user_id INTEGER NOT NULL,
     flashcard_id INTEGER,
     gap_fill_id INTEGER,
