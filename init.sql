@@ -125,7 +125,7 @@ CREATE TABLE IF NOT EXISTS contents_actions (
     FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
-CREATE TYPE event_type AS ENUM ('CREATE', 'UPDATE', 'DELETE');
+CREATE TYPE event_type AS ENUM ('USER_CREATE', 'USER_UPDATE', 'USER_DELETE');
 
 CREATE TABLE IF NOT EXISTS events (
     id SERIAL PRIMARY KEY,
