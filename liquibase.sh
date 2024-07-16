@@ -10,7 +10,7 @@ set -e
 [ -f "ref.sql" ] && sudo rm -f ref.sql
 sudo mkdir out && sudo chmod 777 out
 
-# Generate the diff
+# Generate the reference dump
 echo "Waiting for the reference schema in VSCode... "
 echo "-- Paste here reference schema then close the file" > ref.sql && code ref.sql --wait
 
