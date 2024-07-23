@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS answers (
     gap_fill_id INTEGER,
     flashcard_id INTEGER,
     answer VARCHAR(255),
-    answer_order INTEGER
+    is_correct BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS user_profiles (
@@ -87,6 +87,7 @@ CREATE TABLE IF NOT EXISTS user_interests (
 CREATE TABLE IF NOT EXISTS contents (
     id SERIAL PRIMARY KEY,
     language_id INTEGER NOT NULL,
+    content_url VARCHAR(255),
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
@@ -94,6 +95,8 @@ CREATE TABLE IF NOT EXISTS user_exercises (
     user_id INTEGER NOT NULL,
     flashcard_id INTEGER,
     gap_fill_id INTEGER,
+    completed BOOLEAN DEFAULT FALSE,
+    missed BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (flashcard_id) REFERENCES flashcards(id),
     FOREIGN KEY (gap_fill_id) REFERENCES gap_fills(id)
