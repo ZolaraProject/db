@@ -107,8 +107,8 @@ SELECT setval(pg_get_serial_sequence('flashcards', 'id'), coalesce((SELECT MAX(i
 -- Insert into gap_fills with gaps
 INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id") VALUES
 ('What is your ___?', 1, 1, 1), -- Asking questions - English
-('What is your ___?', 1, 1, 2), -- Asking questions - French
-('What is your ___?', 1, 1, 3), -- Asking questions - Korean
+('Quel est ton ___?', 1, 1, 2), -- Asking questions - French
+('Qual es tu ___?', 1, 1, 3), -- Asking questions - Espagnol
 ('The ___ is red.', 2, 2, 1), -- Describing objects
 ('Could you please ___ the door?', 3, 3, 1), -- Using polite forms
 ('Can you ___ me with this?', 4, 4, 1), -- Making requests
@@ -119,6 +119,13 @@ INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "langua
 ('Every morning, I ___ my teeth.', 9, 9, 1), -- Discussing daily routines
 ('Dear Sir or Madam, I am ___ to inquire about...', 10, 10, 1); -- Writing formal emails
 SELECT setval(pg_get_serial_sequence('gap_fills', 'id'), coalesce((SELECT MAX(id) FROM gap_fills), 0) + 1, false);
+
+
+-- Flashcard Id
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct") VALUES
+(1, 'name', TRUE), -- Correct
+(2, 'nom', TRUE),
+(3, 'nome', TRUE);
 
 -- Gap Fill 1: What is your ___?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
