@@ -127,14 +127,14 @@ INSERT INTO "answers" ("flashcard_id", "answer", "is_correct") VALUES
 (2, 'nom', TRUE),
 (3, 'nome', TRUE);
 
--- Gap Fill 1: What is your ___?
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(1, 'name', TRUE), -- Correct
-(1, 'age', FALSE),
-(1, 'job', FALSE),
-(1, 'city', FALSE),
-(1, 'favorite color', FALSE),
-(1, 'hobby', FALSE);
+-- Gap Fill 1: What ___ your ___?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order") VALUES
+(1, 'name', TRUE, 2),
+(1, 'do', FALSE, NULL),
+(1, 'job', FALSE, NULL),
+(1, 'is', TRUE, 1),
+(1, 'chair', FALSE, NULL),
+(1, 'crib', FALSE, NULL);
 
 -- Gap Fill 2: The ___ is red.
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES

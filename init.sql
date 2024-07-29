@@ -67,7 +67,8 @@ CREATE TABLE IF NOT EXISTS answers (
     gap_fill_id INTEGER,
     flashcard_id INTEGER,
     answer VARCHAR(255),
-    is_correct BOOLEAN
+    is_correct BOOLEAN,
+    answer_order INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS user_profiles (
