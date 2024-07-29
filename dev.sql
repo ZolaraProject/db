@@ -89,31 +89,35 @@ INSERT INTO "linguistic_concepts" ("lc_name", "linguistic_type_id") VALUES
 SELECT setval(pg_get_serial_sequence('linguistic_concepts', 'id'), coalesce((SELECT MAX(id) FROM linguistic_concepts), 0) + 1, false);
 
 -- Insert into flashcards
-INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id") VALUES
-('http://example.com/image1.jpg', 1, 1), -- Asking questions
-('http://example.com/image2.jpg', 2, 2), -- Describing objects
-('http://example.com/image3.jpg', 3, 3), -- Using polite forms
-('http://example.com/image4.jpg', 4, 4), -- Making requests
-('http://example.com/image5.jpg', 5, 5), -- Giving directions
-('http://example.com/image6.jpg', 6, 6), -- Talking about time
-('http://example.com/image7.jpg', 7, 7), -- Talking about future plans
-('http://example.com/image8.jpg', 8, 8), -- Describing people
-('http://example.com/image9.jpg', 9, 9), -- Discussing daily routines
-('http://example.com/image10.jpg', 10, 10); -- Writing formal emails
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id") VALUES
+('http://example.com/image1.jpg', 1, 1, 1), -- Asking questions - English
+('http://example.com/image1.jpg', 1, 1, 2), -- Asking questions - French
+('http://example.com/image1.jpg', 1, 1, 3), -- Asking questions - Korean
+('http://example.com/image2.jpg', 2, 2, 1), -- Describing objects
+('http://example.com/image3.jpg', 3, 3, 1), -- Using polite forms
+('http://example.com/image4.jpg', 4, 4, 1), -- Making requests
+('http://example.com/image5.jpg', 5, 5, 1), -- Giving directions
+('http://example.com/image6.jpg', 6, 6, 1), -- Talking about time
+('http://example.com/image7.jpg', 7, 7, 1), -- Talking about future plans
+('http://example.com/image8.jpg', 8, 8, 1), -- Describing people
+('http://example.com/image9.jpg', 9, 9, 1), -- Discussing daily routines
+('http://example.com/image10.jpg', 10, 10, 1); -- Writing formal emails
 SELECT setval(pg_get_serial_sequence('flashcards', 'id'), coalesce((SELECT MAX(id) FROM flashcards), 0) + 1, false);
 
 -- Insert into gap_fills with gaps
-INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id") VALUES
-('What is your ___?', 1, 1), -- Asking questions
-('The ___ is red.', 2, 2), -- Describing objects
-('Could you please ___ the door?', 3, 3), -- Using polite forms
-('Can you ___ me with this?', 4, 4), -- Making requests
-('Turn ___ at the next intersection.', 5, 5), -- Giving directions
-('It is ___ PM now.', 6, 6), -- Talking about time
-('I will go to the ___ tomorrow.', 7, 7), -- Talking about future plans
-('She is a ___ woman.', 8, 8), -- Describing people
-('Every morning, I ___ my teeth.', 9, 9), -- Discussing daily routines
-('Dear Sir or Madam, I am ___ to inquire about...', 10, 10); -- Writing formal emails
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id") VALUES
+('What is your ___?', 1, 1, 1), -- Asking questions - English
+('What is your ___?', 1, 1, 2), -- Asking questions - French
+('What is your ___?', 1, 1, 3), -- Asking questions - Korean
+('The ___ is red.', 2, 2, 1), -- Describing objects
+('Could you please ___ the door?', 3, 3, 1), -- Using polite forms
+('Can you ___ me with this?', 4, 4, 1), -- Making requests
+('Turn ___ at the next intersection.', 5, 5, 1), -- Giving directions
+('It is ___ PM now.', 6, 6, 1), -- Talking about time
+('I will go to the ___ tomorrow.', 7, 7, 1), -- Talking about future plans
+('She is a ___ woman.', 8, 8, 1), -- Describing people
+('Every morning, I ___ my teeth.', 9, 9, 1), -- Discussing daily routines
+('Dear Sir or Madam, I am ___ to inquire about...', 10, 10, 1); -- Writing formal emails
 SELECT setval(pg_get_serial_sequence('gap_fills', 'id'), coalesce((SELECT MAX(id) FROM gap_fills), 0) + 1, false);
 
 -- Gap Fill 1: What is your ___?

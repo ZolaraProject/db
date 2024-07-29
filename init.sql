@@ -46,8 +46,10 @@ CREATE TABLE IF NOT EXISTS flashcards (
     image_url VARCHAR(255) NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
+    language_id INTEGER,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (interest_id) REFERENCES interests(id)
+    FOREIGN KEY (interest_id) REFERENCES interests(id),
+    FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
 CREATE TABLE IF NOT EXISTS gap_fills (
@@ -55,8 +57,10 @@ CREATE TABLE IF NOT EXISTS gap_fills (
     text TEXT NOT NULL,
     interest_id INTEGER,
     linguistic_concept_id INTEGER,
+    language_id INTEGER,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (interest_id) REFERENCES interests(id)
+    FOREIGN KEY (interest_id) REFERENCES interests(id),
+    FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
 CREATE TABLE IF NOT EXISTS answers (
