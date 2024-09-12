@@ -143,3 +143,25 @@ CREATE TABLE IF NOT EXISTS events (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+CREATE TABLE IF NOT EXISTS video (
+    id INTEGER PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    subtitle VARCHAR(255) NOT NULL,
+    likes INTEGER NOT NULL DEFAULT 0,
+    language_id INTEGER NOT NULL,
+    level_id INTEGER NOT NULL,
+    action_id INTEGER NOT NULL,
+    FOREIGN KEY (language_id) REFERENCES languages(id),
+    FOREIGN KEY (level_id) REFERENCES levels(id),
+    FOREIGN KEY (action_id) REFERENCES actions(id)
+);
+
+CREATE TABLE IF NOT EXISTS user_video (
+    user_id INTEGER NOT NULL,
+    video_id INTEGER NOT NULL,
+    is_difficult BOOLEAN DEFAULT FALSE,
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (video_id) REFERENCES video(id)
+);
+    
