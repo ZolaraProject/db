@@ -1,3 +1,6 @@
 zolara.properties filter=git-crypt diff=git-crypt
 secrets/* filter=git-crypt diff=git-crypt
 init.sql filter=git-crypt diff=git-crypt
+
+# DO NOT EDIT THE LINE BELOW. It is used by git-crypt to avoid encrypting itself
+.gitattributes !filter !diff
