@@ -159,9 +159,10 @@ CREATE TABLE IF NOT EXISTS video (
 
 CREATE TABLE IF NOT EXISTS user_video (
     user_id INTEGER NOT NULL,
-    video_id INTEGER NOT NULL,
-    is_difficult BOOLEAN DEFAULT FALSE,
+    language_id INTEGER NOT NULL,
+    level_id INTEGER NOT NULL,
+    difficult_count INTEGER NOT NULL DEFAULT 0,
     FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (video_id) REFERENCES video(id)
+    FOREIGN KEY (language_id) REFERENCES languages(id),
+    FOREIGN KEY (level_id) REFERENCES levels(id)
 );
-    
