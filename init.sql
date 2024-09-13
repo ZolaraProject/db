@@ -144,7 +144,7 @@ CREATE TABLE IF NOT EXISTS events (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE IF NOT EXISTS video (
+CREATE TABLE IF NOT EXISTS videos (
     id INTEGER PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
     subtitle VARCHAR(255) NOT NULL,
@@ -157,7 +157,7 @@ CREATE TABLE IF NOT EXISTS video (
     FOREIGN KEY (action_id) REFERENCES actions(id)
 );
 
-CREATE TABLE IF NOT EXISTS user_video (
+CREATE TABLE IF NOT EXISTS user_videos (
     user_id INTEGER NOT NULL,
     language_id INTEGER NOT NULL,
     level_id INTEGER NOT NULL,
