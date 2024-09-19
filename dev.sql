@@ -230,12 +230,6 @@ INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (2, 6); -- User 2
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 3); -- User 3 interested in Cinema
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 7); -- User 3 also interested in Food
 
--- Insert into contents
-INSERT INTO "contents" ("language_id") VALUES (1);
-INSERT INTO "contents" ("language_id") VALUES (2);
-INSERT INTO "contents" ("language_id") VALUES (3);
-SELECT setval(pg_get_serial_sequence('contents', 'id'), coalesce((SELECT MAX(id) FROM contents), 0) + 1, false);
-
 -- Insert into user_mistakes for user_id 1
 INSERT INTO "user_mistakes" ("linguistic_concept_id", "user_id", "level_id") VALUES
 (1, 1, 1),
@@ -308,8 +302,24 @@ INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id")
 INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id") VALUES (2, 13);
 INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id") VALUES (8, 13);
 
+-- Insert videos
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (1, 'test1', 'test1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (2, 'test2', 'test2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (3, 'test3', 'test3', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (4, 'test4', 'test4', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (5, 'test5', 'test5', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (6, 'test6', 'test6', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (7, 'test7', 'test7', 0, 2);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (8, 'test8', 'test8', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (9, 'test9', 'test9', 0, 1);
 
--- Insert into contents_actions
-INSERT INTO "contents_actions" ("action_id", "content_id", "interest_id") VALUES (1, 1, 1);
-INSERT INTO "contents_actions" ("action_id", "content_id", "interest_id") VALUES (2, 2, 2);
-INSERT INTO "contents_actions" ("action_id", "content_id", "interest_id") VALUES (3, 3, 3);
+-- Insert video categories
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (1, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (2, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (3, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (4, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (5, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (6, 2, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (7, 1, 4, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (8, 1, 5, NULL);
+INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (9, 2, 4, NULL);
