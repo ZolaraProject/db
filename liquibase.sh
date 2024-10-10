@@ -2,6 +2,31 @@
 
 set -e
 
+# Display the list of properties
+properties=($(find "./properties" -name "*.properties"))
+
+if [ ${#properties[@]} -eq 0 ]; then
+  echo "No .properties files found in $properties_dir. Exiting."
+  exit 1
+fi
+
+echo "Please choose a property file by number:"
+for i in "${!properties[@]}"; do
+  filename=$(basename "${properties[$i]}" .properties)
+  echo "$((i + 1))) $filename"
+done
+
+read -p "Enter your choice (number): " USER_CHOICE
+
+# Validate the choice
+if [[ "$USER_CHOICE" -ge 1 && "$USER_CHOICE" -le "${#properties[@]}" ]]; then
+  chosen_property="${properties[$((USER_CHOICE - 1))]}"
+  echo "You chose: $chosen_property"
+else
+  echo "Invalid choice. Exiting."
+  exit 1
+fi
+
 # Clean environment
 [[ "$(sudo docker ps --format '{{.Names}}')" =~ "postgresqldiff" ]] && echo "Stopping container postgresqldiff..." && docker stop postgresqldiff > /dev/null
 [[ "$(sudo docker ps -a --format '{{.Names}}')" =~ "postgresqldiff" ]] && echo "Removing container postgresqldiff..." && docker rm postgresqldiff > /dev/null
@@ -29,7 +54,7 @@ sudo docker exec -i postgresqldiff psql -U postgres -d zolara < ref.sql
 sudo docker exec -i postgresqldiff psql -U postgres -d zolara -c '\dt'
 
 # Generate the diff
-sudo docker run -v ${PWD}:/liquibase/changelog -v ${PWD}/out:/out --network host liquibase/liquibase --defaultsFile=/liquibase/changelog/zolara.properties --referenceUrl="jdbc:postgresql://127.0.0.1:5443/zolara" --referenceUsername=postgres  --referencePassword=postgres --changeLogFile=/out/diff.sql diffChangeLog
+sudo docker run -v ${PWD}:/liquibase/changelog -v ${PWD}/out:/out --network host liquibase/liquibase --defaultsFile=/liquibase/changelog/$chosen_property --referenceUrl="jdbc:postgresql://127.0.0.1:5443/zolara" --referenceUsername=postgres  --referencePassword=postgres --changeLogFile=/out/diff.sql diffChangeLog
 
 # Check if diff.sql is generated
 if [ -f out/diff.sql ]; then
