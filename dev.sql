@@ -18,6 +18,29 @@ INSERT INTO "actions" ("name") VALUES ('Ask for help');
 INSERT INTO "actions" ("name") VALUES ('Describe an image');
 INSERT INTO "actions" ("name") VALUES ('Write an email');
 INSERT INTO "actions" ("name") VALUES ('Give directions');
+INSERT INTO "actions" ("name") VALUES ('Talk about your family');
+INSERT INTO "actions" ("name") VALUES ('Talk about your friends');
+INSERT INTO "actions" ("name") VALUES ('Talk about your daily routine');
+INSERT INTO "actions" ("name") VALUES ('Talk about your future plans');
+INSERT INTO "actions" ("name") VALUES ('Talk about your past experiences');
+INSERT INTO "actions" ("name") VALUES ('Make a speech');
+INSERT INTO "actions" ("name") VALUES ('Talk about your dreams');
+INSERT INTO "actions" ("name") VALUES ('Talk about your fears');
+INSERT INTO "actions" ("name") VALUES ('Talk about your goals');
+INSERT INTO "actions" ("name") VALUES ('Talk about your achievements');
+INSERT INTO "actions" ("name") VALUES ('Talk about your failures');
+INSERT INTO "actions" ("name") VALUES ('Talk about your strengths');
+INSERT INTO "actions" ("name") VALUES ('Talk about your weaknesses');
+INSERT INTO "actions" ("name") VALUES ('Talk about your favorite things');
+INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite things');
+INSERT INTO "actions" ("name") VALUES ('Talk about your favorite places');
+INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite places');
+INSERT INTO "actions" ("name") VALUES ('Talk about your favorite activities');
+INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite activities');
+INSERT INTO "actions" ("name") VALUES ('Talk about your favorite foods');
+INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite foods');
+INSERT INTO "actions" ("name") VALUES ('Talk about your favorite drinks');
+INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite drinks');
 SELECT setval(pg_get_serial_sequence('actions', 'id'), coalesce((SELECT MAX(id) FROM actions), 0) + 1, false);
 
 INSERT INTO "interests" ("name") VALUES ('Sports');
@@ -88,134 +111,260 @@ INSERT INTO "linguistic_concepts" ("lc_name", "linguistic_type_id") VALUES
 ('Using context clues', 5);
 SELECT setval(pg_get_serial_sequence('linguistic_concepts', 'id'), coalesce((SELECT MAX(id) FROM linguistic_concepts), 0) + 1, false);
 
--- Insert into flashcards
-INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id") VALUES
-('http://example.com/image1.jpg', 1, 1, 1), -- Asking questions - English
-('http://example.com/image1.jpg', 1, 1, 2), -- Asking questions - French
-('http://example.com/image1.jpg', 1, 1, 3), -- Asking questions - Korean
-('http://example.com/image2.jpg', 2, 2, 1), -- Describing objects
-('http://example.com/image3.jpg', 3, 3, 1), -- Using polite forms
-('http://example.com/image4.jpg', 4, 4, 1), -- Making requests
-('http://example.com/image5.jpg', 5, 5, 1), -- Giving directions
-('http://example.com/image6.jpg', 6, 6, 1), -- Talking about time
-('http://example.com/image7.jpg', 7, 7, 1), -- Talking about future plans
-('http://example.com/image8.jpg', 8, 8, 1), -- Describing people
-('http://example.com/image9.jpg', 9, 9, 1), -- Discussing daily routines
-('http://example.com/image10.jpg', 10, 10, 1); -- Writing formal emails
-SELECT setval(pg_get_serial_sequence('flashcards', 'id'), coalesce((SELECT MAX(id) FROM flashcards), 0) + 1, false);
+--------------------------------------------------------------------------------
+---------------------------------- FLASHCARDS ----------------------------------
+--------------------------------------------------------------------------------
 
--- Insert into gap_fills with gaps
-INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id") VALUES
-('What is your ___?', 1, 1, 1), -- Asking questions - English
-('Quel est ton ___?', 1, 1, 2), -- Asking questions - French
-('Qual es tu ___?', 1, 1, 3), -- Asking questions - Espagnol
-('The ___ is red.', 2, 2, 1), -- Describing objects
-('Could you please ___ the door?', 3, 3, 1), -- Using polite forms
-('Can you ___ me with this?', 4, 4, 1), -- Making requests
-('Turn ___ at the next intersection.', 5, 5, 1), -- Giving directions
-('It is ___ PM now.', 6, 6, 1), -- Talking about time
-('I will go to the ___ tomorrow.', 7, 7, 1), -- Talking about future plans
-('She is a ___ woman.', 8, 8, 1), -- Describing people
-('Every morning, I ___ my teeth.', 9, 9, 1), -- Discussing daily routines
-('Dear Sir or Madam, I am ___ to inquire about...', 10, 10, 1); -- Writing formal emails
-SELECT setval(pg_get_serial_sequence('gap_fills', 'id'), coalesce((SELECT MAX(id) FROM gap_fills), 0) + 1, false);
+-- Insert into flashcards and answers
+-- Flashcard 1: Asking questions - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image1.jpg', 1, 1, 1);
+
+-- Answers for Flashcard 1 (Asking questions - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (1, 'name', TRUE);
+
+-- Flashcard 2: Asking questions - French
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image1.jpg', 1, 1, 2);
+
+-- Answers for Flashcard 2 (Asking questions - French)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (2, 'nom', TRUE);
+
+-- Flashcard 3: Asking questions - Korean
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image1.jpg', 1, 1, 3);
+
+-- Answers for Flashcard 3 (Asking questions - Korean)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (3, '이름', TRUE);
+
+-- Flashcard 4: Asking questions - Spanish
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image1.jpg', 1, 1, 4);
+
+-- Answers for Flashcard 4 (Asking questions - Spanish)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (4, 'nombre', TRUE);
+
+-- Flashcard 5: Asking questions - Japanese
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image1.jpg', 1, 1, 5);
+
+-- Answers for Flashcard 5 (Asking questions - Japanese)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (5, '名前', TRUE);
+
+-- Flashcard 6: Describing objects - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image2.jpg', 2, 2, 1);
+
+-- Answers for Flashcard 6 (Describing objects - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (6, 'water', TRUE);
+
+-- Flashcard 7: Using polite forms - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image3.jpg', 3, 3, 1);
+
+-- Answers for Flashcard 7 (Using polite forms - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (7, 'please', TRUE);
+
+-- Flashcard 8: Making requests - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image4.jpg', 4, 4, 1);
+
+-- Answers for Flashcard 8 (Making requests - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (8, 'help', TRUE);
+
+-- Flashcard 9: Giving directions - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image5.jpg', 5, 5, 1);
+
+-- Answers for Flashcard 9 (Giving directions - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (9, 'left', TRUE);
+
+-- Flashcard 10: Talking about time - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image6.jpg', 6, 6, 1);
+
+-- Answers for Flashcard 10 (Talking about time - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (10, '3', TRUE);
+
+-- Flashcard 11: Talking about future plans - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image7.jpg', 7, 7, 1);
+
+-- Answers for Flashcard 11 (Talking about future plans - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (11, 'gym', TRUE);
+
+-- Flashcard 12: Describing people - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image8.jpg', 8, 8, 1);
+
+-- Answers for Flashcard 12 (Describing people - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (12, 'tall', TRUE);
+
+-- Flashcard 13: Discussing daily routines - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image9.jpg', 9, 9, 1);
+
+-- Answers for Flashcard 13 (Discussing daily routines - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (13, 'brush', TRUE);
+
+-- Flashcard 14: Writing formal emails - English
+INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('http://example.com/image10.jpg', 10, 10, 1);
+
+-- Answers for Flashcard 14 (Writing formal emails - English)
+INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
+VALUES (14, 'writing', TRUE);
 
 
--- Flashcard Id
-INSERT INTO "answers" ("flashcard_id", "answer", "is_correct") VALUES
-(1, 'name', TRUE), -- Correct
-(2, 'nom', TRUE),
-(3, 'nome', TRUE);
+-------------------------------------------------------------------------------
+---------------------------------- GAP FILLS ----------------------------------
+-------------------------------------------------------------------------------
 
+-- Insert into gap_fills and answers
+
+--linguistic_concept_id 1: Asking questions
 -- Gap Fill 1: What ___ your ___?
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order") VALUES
-(1, 'name', TRUE, 2),
-(1, 'do', FALSE, NULL),
-(1, 'job', FALSE, NULL),
-(1, 'is', TRUE, 1),
-(1, 'chair', FALSE, NULL),
-(1, 'crib', FALSE, NULL);
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('What ___ your ___?', NULL, 1, 1);
 
--- Gap Fill 2: The ___ is red.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(2, 'ball', TRUE), -- Correct
-(2, 'car', FALSE),
-(2, 'hat', FALSE),
-(2, 'flower', FALSE),
-(2, 'shirt', FALSE),
-(2, 'rose', FALSE);
+-- Answers for Gap Fill 1: What ___ your ___?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (1, 'is', TRUE, 1),
+       (1, 'name', TRUE, 2),
+       (1, 'do', FALSE, NULL),
+       (1, 'table', FALSE, NULL),
+       (1, 'chair', FALSE, NULL),
+       (1, 'crib', FALSE, NULL);
 
--- Gap Fill 3: Could you please ___ the door?
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(3, 'open', TRUE), -- Correct
-(3, 'close', FALSE),
-(3, 'paint', FALSE),
-(3, 'fix', FALSE),
-(3, 'clean', FALSE),
-(3, 'lock', FALSE);
+-- Gap Fill 2: ___ is your ___?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ is your ___?', NULL, 1, 1);
 
--- Gap Fill 4: Can you ___ me with this?
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(4, 'help', TRUE), -- Correct
-(4, 'give', FALSE),
-(4, 'show', FALSE),
-(4, 'tell', FALSE),
-(4, 'find', FALSE),
-(4, 'bring', FALSE);
+-- Answers for Gap Fill 2: ___ is your ___?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (2, 'What', TRUE, 1),
+       (2, 'name', TRUE, 2),
+       (2, 'is', FALSE, NULL),
+       (2, 'did', FALSE, NULL),
+       (2, 'chair', FALSE, NULL),
+       (2, 'crib', FALSE, NULL);
 
--- Gap Fill 5: Turn ___ at the next intersection.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(5, 'left', TRUE), -- Correct
-(5, 'right', FALSE),
-(5, 'straight', FALSE),
-(5, 'around', FALSE),
-(5, 'near', FALSE),
-(5, 'past', FALSE);
+-- Gap Fill 3: ___ is your name?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ ___ your name?', NULL, 1, 1);
 
--- Gap Fill 6: It is ___ PM now.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(6, '3', TRUE), -- Correct
-(6, '1', FALSE),
-(6, '5', FALSE),
-(6, '7', FALSE),
-(6, '9', FALSE),
-(6, '11', FALSE);
+-- Answers for Gap Fill 3: ___ ___ your name?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (3, 'What', TRUE, 1),
+       (3, 'is', TRUE, 2),
+       (3, 'your', FALSE, NULL),
+       (3, 'name', FALSE, NULL),
+       (3, 'job', FALSE, NULL),
+       (3, 'chair', FALSE, NULL);
 
--- Gap Fill 7: I will go to the ___ tomorrow.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(7, 'gym', TRUE), -- Correct
-(7, 'market', FALSE),
-(7, 'school', FALSE),
-(7, 'office', FALSE),
-(7, 'park', FALSE),
-(7, 'beach', FALSE);
+-- Gap Fill 4: How ___ your ___?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('How ___ your ___?', NULL, 1, 1);
 
--- Gap Fill 8: She is a ___ woman.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(8, 'tall', TRUE), -- Correct
-(8, 'young', FALSE),
-(8, 'kind', FALSE),
-(8, 'smart', FALSE),
-(8, 'beautiful', FALSE),
-(8, 'strong', FALSE);
+-- Answers for Gap Fill 4: How ___ your ___?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (4, 'are', TRUE, 1),
+       (4, 'parents', TRUE, 2),
+       (4, 'does', FALSE, NULL),
+       (4, 'dog', FALSE, NULL),
+       (4, 'book', FALSE, NULL),
+       (4, 'room', FALSE, NULL);
 
--- Gap Fill 9: Every morning, I ___ my teeth.
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(9, 'brush', TRUE), -- Correct
-(9, 'wash', FALSE),
-(9, 'comb', FALSE),
-(9, 'clean', FALSE),
-(9, 'floss', FALSE),
-(9, 'rinse', FALSE);
+-- Gap Fill 5: Can ___ help ___ please ?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('Can ___ help ___ please ?', NULL, 1, 1);
 
--- Gap Fill 10: Dear Sir or Madam, I am ___ to inquire about...
-INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct") VALUES
-(10, 'writing', TRUE), -- Correct
-(10, 'calling', FALSE),
-(10, 'emailing', FALSE),
-(10, 'texting', FALSE),
-(10, 'meeting', FALSE),
-(10, 'reporting', FALSE);
+-- Answers for Gap Fill 5: Can ___ help ___ please ?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (5, 'you', TRUE, 1),
+       (5, 'me', TRUE, 2),
+       (5, 'must', FALSE, NULL),
+       (5, 'job', FALSE, NULL),
+       (5, 'doing', FALSE, NULL),
+       (5, 'great', FALSE, NULL);
+
+-- Gap Fill 6: ___ you ___ Lionel Messi?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ you ___ Lionel Messi?', 1, 1, 1);
+
+-- Answers for Gap Fill 6: ___ you ___ Lionel Messi?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (6, 'Do', TRUE, 1),
+       (6, 'like', TRUE, 2),
+       (6, 'are', FALSE, NULL),
+       (6, 'name', FALSE, NULL),
+       (6, 'doing', FALSE, NULL),
+       (6, 'great', FALSE, NULL);
+
+-- Gap Fill 7: ___ you ___ to the cinema?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ you ___ to the cinema?', 3, 1, 1);
+
+-- Answers for Gap Fill 7: ___ you ___ to the cinema?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (7, 'Do', TRUE, 1),
+       (7, 'go', TRUE, 2),
+       (7, 'are', FALSE, NULL),
+       (7, 'name', FALSE, NULL),
+       (7, 'doing', FALSE, NULL),
+       (7, 'great', FALSE, NULL);
+
+-- Gap Fill 8: ___ you ___ to the gym?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ you ___ to the gym?', 1, 1, 1);
+
+-- Answers for Gap Fill 8: ___ you ___ to the gym?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (8, 'Do', TRUE, 1),
+       (8, 'go', TRUE, 2),
+       (8, 'are', FALSE, NULL),
+       (8, 'name', FALSE, NULL),
+       (8, 'doing', FALSE, NULL),
+       (8, 'great', FALSE, NULL);
+
+-- Gap Fill 9: Have you ___ been ___ Greece ?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('Have you ___ been ___ Greece ?', 6, 1, 1);
+
+-- Answers for Gap Fill 9: Have you ___ been ___ Greece ?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (9, 'ever', TRUE, 1),
+       (9, 'to', TRUE, 2),
+       (9, 'are', FALSE, NULL),
+       (9, 'name', FALSE, NULL),
+       (9, 'doing', FALSE, NULL),
+       (9, 'great', FALSE, NULL);
+
+-- Gap Fill 10: __ you ___ go to ___ Basketball with your friends?
+INSERT INTO "gap_fills" ("text", "interest_id", "linguistic_concept_id", "language_id")
+VALUES ('___ you ___ go to ___ Basketball with your friends?', 1, 1, 1);
+
+-- Answers for Gap Fill 10: __ you ___ go to ___ Basketball with your friends?
+INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
+VALUES (10, 'Do', TRUE, 1),
+       (10, 'sometimes', TRUE, 2),
+       (10, 'play', TRUE, 3),
+       (10, 'are', FALSE, NULL),
+       (10, 'name', FALSE, NULL),
+       (10, 'doing', FALSE, NULL);
 
 -- Insert into user_profiles
 INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 1, 1);
