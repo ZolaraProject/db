@@ -43,6 +43,20 @@ INSERT INTO "actions" ("name") VALUES ('Talk about your favorite drinks');
 INSERT INTO "actions" ("name") VALUES ('Talk about your least favorite drinks');
 SELECT setval(pg_get_serial_sequence('actions', 'id'), coalesce((SELECT MAX(id) FROM actions), 0) + 1, false);
 
+INSERT INTO "levels" ("name") VALUES ('A1');
+INSERT INTO "levels" ("name") VALUES ('A2');
+INSERT INTO "levels" ("name") VALUES ('B1');
+INSERT INTO "levels" ("name") VALUES ('B2');
+INSERT INTO "levels" ("name") VALUES ('C1');
+INSERT INTO "levels" ("name") VALUES ('C2');
+SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) FROM levels), 0) + 1, false);
+
+INSERT INTO "actions_levels" ("action_id", "level_id", "name") VALUES (1, 1, '__ simply');
+INSERT INTO "actions_levels" ("action_id", "level_id", "name") VALUES (1, 2, '__ less simply');
+INSERT INTO "actions_levels" ("action_id", "level_id", "name") VALUES (1, 3, '__ a bit more complex');
+INSERT INTO "actions_levels" ("action_id", "level_id", "name") VALUES (1, 4, '__ more complex');
+INSERT INTO "actions_levels" ("action_id", "level_id", "name") VALUES (1, 5, '__ very complex');
+
 INSERT INTO "interests" ("name") VALUES ('Sports');
 INSERT INTO "interests" ("name") VALUES ('Politics');
 INSERT INTO "interests" ("name") VALUES ('Cinema');
@@ -67,22 +81,14 @@ INSERT INTO "languages" ("name") VALUES ('Spanish');
 INSERT INTO "languages" ("name") VALUES ('Japanese');
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
 
-INSERT INTO "levels" ("proficiency") VALUES ('A1');
-INSERT INTO "levels" ("proficiency") VALUES ('A2');
-INSERT INTO "levels" ("proficiency") VALUES ('B1');
-INSERT INTO "levels" ("proficiency") VALUES ('B2');
-INSERT INTO "levels" ("proficiency") VALUES ('C1');
-INSERT INTO "levels" ("proficiency") VALUES ('C2');
-SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) FROM levels), 0) + 1, false);
-
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 5, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 5, 2);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 2, 4, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (2, 3, 1, 2);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (2, 1, 3, 2);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 4, 5, 3);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 2, 3, 3);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 5, 1, 2);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 2, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 3, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 1, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 4, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 2, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 5, 2);
 
 -- Insert into linguistic_types
 INSERT INTO "linguistic_types" ("lt_name") VALUES ('Communication Skill');
@@ -367,9 +373,9 @@ VALUES (10, 'Do', TRUE, 1),
        (10, 'doing', FALSE, NULL);
 
 -- Insert into user_profiles
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (1, 1, 1, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (2, 2, 2, 2);
-INSERT INTO "user_profiles" ("user_id", "language_id", "level_id", "action_id") VALUES (3, 3, 3, 3);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 2, 2);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 3, 3);
 
 -- Linking existing users to new interests
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (1, 1); -- User 1 interested in Football
@@ -380,12 +386,12 @@ INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 3); -- User 3
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 7); -- User 3 also interested in Food
 
 -- Insert into user_mistakes for user_id 1
-INSERT INTO "user_mistakes" ("linguistic_concept_id", "user_id", "level_id") VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4),
-(5, 1, 5);
+INSERT INTO "user_mistakes" ("linguistic_concept_id", "user_id") VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1);
 SELECT setval(pg_get_serial_sequence('user_mistakes', 'id'), coalesce((SELECT MAX(id) FROM user_mistakes), 0) + 1, false);
 -- Book a room
 INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id") VALUES (1, 1);
@@ -463,12 +469,12 @@ INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES 
 INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (9, 'test9', 'test9', 0, 1);
 
 -- Insert video categories
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (1, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (2, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (3, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (4, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (5, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (6, 2, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (7, 1, 4, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (8, 1, 5, NULL);
-INSERT INTO "video_category" ("video_id", "action_id", "level_id", "interest_id") VALUES (9, 2, 4, NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (1, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (2, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (3, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (4, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ( 2,  1,NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (6, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (7, 1,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (8, 1,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (9, 2,  NULL);
