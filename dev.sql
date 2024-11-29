@@ -1,6 +1,7 @@
 INSERT INTO "users" ("email", "password", "username", "role") VALUES ('admin', 'admin', 'admin', 'admin');
 INSERT INTO "users" ("email", "password", "username") VALUES ('test1', 'test1', 'test1');
 INSERT INTO "users" ("email", "password", "username") VALUES ('test2', 'test2', 'test2');
+INSERT INTO "users" ("email", "password", "username") VALUES ('baptiste@test.fr', '$2a$14$m55hTXR3AEBvHMVGbfK7KuGcBPlSJRqYFIlf.Nq8LUTgk1h5n3.66', 'baptiste');
 SELECT setval(pg_get_serial_sequence('users', 'id'), coalesce((SELECT MAX(id) FROM users), 0) + 1, false);
 
 -- Insert categories
@@ -923,13 +924,6 @@ INSERT INTO "languages" ("name") VALUES ('Japanese');
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
 
 INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 2, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 3, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 1, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 4, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 2, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 5, 2);
 
 -- Insert into linguistic_types
 INSERT INTO "linguistic_types" ("lt_name") VALUES ('Communication Skill');
@@ -1259,6 +1253,7 @@ VALUES (10, 'Do', TRUE, 1),
 INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (1, 1, 1);
 INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (2, 2, 2);
 INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (3, 3, 3);
+INSERT INTO "user_profiles" ("user_id", "language_id", "actions_levels_id") VALUES (4, 1, 109);
 
 -- Linking existing users to new interests
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (1, 1); -- User 1 interested in Football
@@ -1267,6 +1262,7 @@ INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (2, 2); -- User 2
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (2, 6); -- User 2 also interested in Travel
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 3); -- User 3 interested in Cinema
 INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 7); -- User 3 also interested in Food
+INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (4, 1); -- User 3 also interested in Food
 
 -- Insert into user_mistakes for user_id 1
 INSERT INTO "user_mistakes" ("linguistic_concept_id", "user_id") VALUES
@@ -1341,23 +1337,28 @@ INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id")
 INSERT INTO "actions_linguistic_concepts" ("linguistic_concept_id", "action_id") VALUES (8, 13);
 
 -- Insert videos
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (1, 'test1', 'test1', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (2, 'test2', 'test2', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (3, 'test3', 'test3', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (4, 'test4', 'test4', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (5, 'test5', 'test5', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (6, 'test6', 'test6', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (7, 'test7', 'test7', 0, 2);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (8, 'test8', 'test8', 0, 1);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES (9, 'test9', 'test9', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('2d8f9888-2185-4f98-8695-0764dc2643e3', 'The Story of The Greatest Robbery in Football History', 'test1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('bc32e38e-32cf-456a-9607-7988caa8297d', 'About Football Again - History of the Game', 'test2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b8c609a8-27e4-41d2-8b5f-cea129001aac', 'English Fan Experience', 'test3', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('ac538fa6-8bc6-457c-bd16-833b1a7690b6', 'English Football League： EFL Warns Against Early Football Return', 'test4', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8190ab4c-7595-491b-b40b-c8be506376c9', 'How 1 Man Rewrote English Football', 'test5', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('fa070d1f-57ae-43fc-82b9-0a070808f256', 'Why England Struggles To Win Trophies ', 'test6', 0, 1);
 
 -- Insert video categories
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (1, 2,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (2, 2,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (3, 2,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (4, 2,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ( 2,  1,NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (6, 2,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (7, 1,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (8, 1,  NULL);
-INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES (9, 2,  NULL);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('2d8f9888-2185-4f98-8695-0764dc2643e3', 109,  1);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('bc32e38e-32cf-456a-9607-7988caa8297d', 109,  1);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('b8c609a8-27e4-41d2-8b5f-cea129001aac', 109,  1);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('ac538fa6-8bc6-457c-bd16-833b1a7690b6', 109,  1);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('8190ab4c-7595-491b-b40b-c8be506376c9', 109,  1);
+INSERT INTO "video_category" ("video_id", "actions_levels_id", "interest_id") VALUES ('fa070d1f-57ae-43fc-82b9-0a070808f256', 109,  1);
+
+-- Define language to user
+INSERT INTO "user_activity" ("id", "user_id", "current_language_id") VALUES (1, 4, 1);
+
+-- Connect  video to user
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('2d8f9888-2185-4f98-8695-0764dc2643e3', 4);
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('bc32e38e-32cf-456a-9607-7988caa8297d', 4);
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('b8c609a8-27e4-41d2-8b5f-cea129001aac', 4);
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('ac538fa6-8bc6-457c-bd16-833b1a7690b6', 4);
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('8190ab4c-7595-491b-b40b-c8be506376c9', 4);
+INSERT INTO "user_videos" ("video_id", "user_id") VALUES ('fa070d1f-57ae-43fc-82b9-0a070808f256', 4);
