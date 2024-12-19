@@ -1,0 +1,6 @@
+FROM mariadb:11.7-rc
+COPY ./initMaria.sql /docker-entrypoint-initdb.d/
+# ENV MYSQL_USER=postgres
+# ENV MYSQL_PASSWORD=postgres
+# ENV MYSQL_ROOT_PASSWORD=postgres
+# ENV MYSQL_DATABASE=zolara
