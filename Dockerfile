@@ -1,4 +1,4 @@
-FROM postgres:16.3
+FROM postgres:17.2
 # ENV POSTGRES_PASSWORD=postgres
 ENV POSTGRES_USER=postgres
 ENV POSTGRES_DB=zolara
