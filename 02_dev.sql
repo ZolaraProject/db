@@ -21,12 +21,18 @@ INSERT INTO "languages" ("name", "image_url") VALUES ('Japanese', 'https://www.c
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
 
 -- Insert linguistic types
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Communication Skill');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Phonetics');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Grammar');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Vocabulary');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Reading Strategy');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Sentence Construction');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Question and Request Formation');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Tense and Time');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Comparison and Contrast');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Conditional and Causative');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Numbers and Counting');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Negation and Modality');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Politeness and Social Norms');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Descriptive Language');
+INSERT INTO "linguistic_types" ("lt_name") VALUES ('Prepositions and Place');
 SELECT setval(pg_get_serial_sequence('linguistic_types', 'id'), coalesce((SELECT MAX(id) FROM linguistic_types), 0) + 1, false);
+
 
 -- Include additional seed files
 \i /docker-entrypoint-initdb.d/seeds/interests.sql
