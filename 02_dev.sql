@@ -13,12 +13,30 @@ INSERT INTO "levels" ("name") VALUES ('Advanced');
 SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) FROM levels), 0) + 1, false);
 
 -- Insert languages
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('English', 'https://www.countryflags.io/gb/flat/64.png', TRUE);
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('French', 'https://www.countryflags.io/fr/flat/64.png', TRUE);
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Korean', 'https://www.countryflags.io/kr/flat/64.png', FALSE);
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Spanish', 'https://www.countryflags.io/es/flat/64.png', FALSE);
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Japanese', 'https://www.countryflags.io/jp/flat/64.png', FALSE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('English', 'english-flag.svg', TRUE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('French', 'french-flag.svg', TRUE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Korean', 'korean-flag.svg', FALSE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Spanish', 'spanish-flag.svg', FALSE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Japanese', 'japan-flag.svg', FALSE);
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
+
+-- Insert interests
+INSERT INTO "interests" ("name", "image_url") VALUES ('Sports', 'sports.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Politics', 'politics.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Cinema', 'cinema.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Music', 'music.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Technology', 'technology.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Travel', 'travel.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Food', 'food.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Literature', 'literature.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Science', 'science.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Fitness', 'fitness.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Gaming', 'gaming.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Art', 'art.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('History', 'history.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Fashion', 'fashion.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Environment', 'environment.svg');
+
 
 -- Insert linguistic types
 INSERT INTO "linguistic_types" ("lt_name") VALUES ('Sentence Construction');
