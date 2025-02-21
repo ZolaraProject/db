@@ -1,20 +1,20 @@
--- Insert into interests
-INSERT INTO "interests" ("name") VALUES ('Sports');
-INSERT INTO "interests" ("name") VALUES ('Politics');
-INSERT INTO "interests" ("name") VALUES ('Cinema');
-INSERT INTO "interests" ("name") VALUES ('Music');
-INSERT INTO "interests" ("name") VALUES ('Technology');
-INSERT INTO "interests" ("name") VALUES ('Travel');
-INSERT INTO "interests" ("name") VALUES ('Food');
-INSERT INTO "interests" ("name") VALUES ('Literature');
-INSERT INTO "interests" ("name") VALUES ('Science');
-INSERT INTO "interests" ("name") VALUES ('Gaming');
-INSERT INTO "interests" ("name") VALUES ('Art');
-INSERT INTO "interests" ("name") VALUES ('History');
-INSERT INTO "interests" ("name") VALUES ('Fashion');
-INSERT INTO "interests" ("name") VALUES ('Environment');
-INSERT INTO "interests" ("name") VALUES ('Automotive');
-INSERT INTO "interests" ("name") VALUES ('Business & Finance');
-INSERT INTO "interests" ("name") VALUES ('Health & Wellness');
-INSERT INTO "interests" ("name") VALUES ('Spirituality');
+-- Insert interests
+INSERT INTO "interests" ("name", "image_url") VALUES ('Sports', 'sports.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Politics', 'politics.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Cinema', 'cinema.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Music', 'music.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Technology', 'technology.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Travel', 'travel.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Food', 'food.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Literature', 'literature.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Science', 'science.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Gaming', 'gaming.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Art', 'art.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('History', 'history.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Fashion', 'fashion.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Environment', 'environment.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Business & Finance', 'business_finance.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Health & Wellness', 'health_wellness.svg');
+INSERT INTO "interests" ("name", "image_url") VALUES ('Spirituality', 'spirituality.svg');
+
 SELECT setval(pg_get_serial_sequence('interests', 'id'), coalesce((SELECT MAX(id) FROM interests), 0) + 1, false);
