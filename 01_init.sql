@@ -3,7 +3,8 @@ CREATE USER pgg_superadmins WITH PASSWORD 'postgres_changeme';
 CREATE TABLE IF NOT EXISTS languages (
     id SERIAL PRIMARY KEY,
     name VARCHAR(50) NOT NULL UNIQUE,
-    image_url VARCHAR(255)
+    image_url VARCHAR(255),
+    is_available BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 CREATE TABLE IF NOT EXISTS levels (

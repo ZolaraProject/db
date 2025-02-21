@@ -13,11 +13,11 @@ INSERT INTO "levels" ("name") VALUES ('Advanced');
 SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) FROM levels), 0) + 1, false);
 
 -- Insert languages
-INSERT INTO "languages" ("name", "image_url") VALUES ('English', 'https://www.countryflags.io/gb/flat/64.png');
-INSERT INTO "languages" ("name", "image_url") VALUES ('French', 'https://www.countryflags.io/fr/flat/64.png');
-INSERT INTO "languages" ("name", "image_url") VALUES ('Korean', 'https://www.countryflags.io/kr/flat/64.png');
-INSERT INTO "languages" ("name", "image_url") VALUES ('Spanish', 'https://www.countryflags.io/es/flat/64.png');
-INSERT INTO "languages" ("name", "image_url") VALUES ('Japanese', 'https://www.countryflags.io/jp/flat/64.png');
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('English', 'https://www.countryflags.io/gb/flat/64.png', TRUE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('French', 'https://www.countryflags.io/fr/flat/64.png', TRUE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Korean', 'https://www.countryflags.io/kr/flat/64.png', FALSE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Spanish', 'https://www.countryflags.io/es/flat/64.png', FALSE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Japanese', 'https://www.countryflags.io/jp/flat/64.png', FALSE);
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
 
 -- Insert linguistic types
@@ -41,30 +41,6 @@ SELECT setval(pg_get_serial_sequence('linguistic_types', 'id'), coalesce((SELECT
 \i /docker-entrypoint-initdb.d/seeds/flashcards.sql
 \i /docker-entrypoint-initdb.d/seeds/gap_fills.sql
 \i /docker-entrypoint-initdb.d/seeds/actions_linguistic_concepts.sql
-
--- Insert into user_profiles
-INSERT INTO "user_profiles" ("user_id", "language_id", "action_id") VALUES (1, 1, 1);
-INSERT INTO "user_profiles" ("user_id", "language_id", "action_id") VALUES (2, 2, 2);
-INSERT INTO "user_profiles" ("user_id", "language_id", "action_id") VALUES (3, 3, 3);
-
--- Linking existing users to new interests
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (1, 1); -- User 1 interested in Football
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (1, 4); -- User 1 also interested in Music
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (2, 2); -- User 2 interested in Politics
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (2, 6); -- User 2 also interested in Travel
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 3); -- User 3 interested in Cinema
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (3, 7); -- User 3 also interested in Food
-INSERT INTO "user_interests" ("user_id", "interest_id") VALUES (4, 1); -- User 3 also interested in Food
-
--- Insert into user_mistakes for user_id 1
-INSERT INTO "user_mistakes" ("linguistic_concept_id", "user_id") VALUES
-(1, 1),
-(2, 1),
-(3, 1),
-(4, 1),
-(5, 1);
-SELECT setval(pg_get_serial_sequence('user_mistakes', 'id'), coalesce((SELECT MAX(id) FROM user_mistakes), 0) + 1, false);
-
 -- -- Insert videos
 -- INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('2d8f9888-2185-4f98-8695-0764dc2643e3', 'The Story of The Greatest Robbery in Football History', 'test1', 0, 1);
 -- INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('bc32e38e-32cf-456a-9607-7988caa8297d', 'About Football Again - History of the Game', 'test2', 0, 1);

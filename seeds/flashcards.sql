@@ -2,6 +2,8 @@
 ---------------------------------- FLASHCARDS ----------------------------------
 --------------------------------------------------------------------------------
 
+-- Language Id 1: English
+
 -- Flashcard 1: Asking questions - English
 INSERT INTO "flashcards" ("image_url", "interest_id", "linguistic_concept_id", "language_id")
 VALUES ('http://example.com/image1.jpg', 1, 1, 1);

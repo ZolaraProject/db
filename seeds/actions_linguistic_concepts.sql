@@ -1,96 +1,104 @@
 -- Beginner Level Actions
 
--- Action: Asking and telling time (ID: 1)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Numbers and Counting')),
-(1, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Time'));
+-- Action: Asking and telling time
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Numbers and Counting')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling time'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Time'));
 
--- Action: Introducing yourself and others (ID: 2)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(2, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(2, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Expressions')),
-(2, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Formal and Informal Language'));
+-- Action: Introducing yourself and others
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Introducing yourself and others'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Introducing yourself and others'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Expressions')),
+((SELECT id FROM "actions" WHERE "name" = 'Introducing yourself and others'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Formal and Informal Language'));
 
--- Action: Describe something (ID: 3)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(3, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Adjectives')),
-(3, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases')),
-(3, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
+-- Action: Describe something
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Describe something'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Adjectives')),
+((SELECT id FROM "actions" WHERE "name" = 'Describe something'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases')),
+((SELECT id FROM "actions" WHERE "name" = 'Describe something'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
 
--- Action: Greeting and making Small Talk (ID: 4)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(4, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(4, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Expressions')),
-(4, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Formal and Informal Language'));
+-- Action: Greeting and making Small Talk
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Greeting and making Small Talk'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Greeting and making Small Talk'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Expressions')),
+((SELECT id FROM "actions" WHERE "name" = 'Greeting and making Small Talk'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Formal and Informal Language'));
 
--- Action: Talking about hobbies (ID: 5)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(5, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(5, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense')),
-(5, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases'));
+-- Action: Talking about hobbies
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Talking about hobbies'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Talking about hobbies'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense')),
+((SELECT id FROM "actions" WHERE "name" = 'Talking about hobbies'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases'));
 
 -- Intermediate Level Actions
 
--- Action: Book a reservation (ID: 6)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(6, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
-(6, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Future Tense')),
-(6, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(6, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions'));
+-- Action: Book a reservation
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
+((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Future Tense')),
+((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions'));
 
--- Action: Asking for directions (ID: 7)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(7, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
-(7, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Place')),
-(7, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Direction')),
-(7, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests'));
+-- Action: Asking for directions
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Asking for directions'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking for directions'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Place')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking for directions'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Prepositions of Direction')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking for directions'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests'));
 
--- Action: Tell a story (ID: 8)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(8, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Past Tense')),
-(8, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Complex Sentences')),
-(8, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Sequencing Words')),
-(8, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases'));
+-- Action: Tell a story
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Tell a story'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Past Tense')),
+((SELECT id FROM "actions" WHERE "name" = 'Tell a story'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Complex Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Tell a story'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Sequencing Words')),
+((SELECT id FROM "actions" WHERE "name" = 'Tell a story'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Descriptive Phrases'));
 
--- Action: Ask information about a service or product (ID: 9)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(9, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
-(9, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
-(9, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
+-- Action: Ask information about a service or product
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Ask information about a service or product'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Question Formation')),
+((SELECT id FROM "actions" WHERE "name" = 'Ask information about a service or product'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
+((SELECT id FROM "actions" WHERE "name" = 'Ask information about a service or product'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
 
--- Action: Ordering food (ID: 10)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(10, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
-(10, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(10, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense'));
+-- Action: Ordering food
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Ordering food'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
+((SELECT id FROM "actions" WHERE "name" = 'Ordering food'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Ordering food'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Present Tense'));
 
--- Action: Comparing objects or people (ID: 11)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(11, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Adjectives')),
-(11, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Structures')),
-(11, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
+-- Action: Comparing objects or people
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Comparing objects or people'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Adjectives')),
+((SELECT id FROM "actions" WHERE "name" = 'Comparing objects or people'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Structures')),
+((SELECT id FROM "actions" WHERE "name" = 'Comparing objects or people'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
 
 -- Advanced Level Actions
 
--- Action: Bargaining (ID: 12)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(12, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Conditional Sentences')),
-(12, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Negotiation Language')),
-(12, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests'));
+-- Action: Bargaining
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Bargaining'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Conditional Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Bargaining'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Adjectives')),
+((SELECT id FROM "actions" WHERE "name" = 'Bargaining'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Comparative Structures')),
+((SELECT id FROM "actions" WHERE "name" = 'Bargaining'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests'));
 
--- Action: Handling emergencies (ID: 13)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(13, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Imperative Sentences')),
-(13, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-(13, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Expressing Urgency'));
+-- Action: Handling emergencies
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Handling emergencies'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Imperative Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Handling emergencies'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences'));
 
--- Action: Asking and telling reasons why (ID: 14)
-INSERT INTO "action_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-(14, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Causative Conjunctions')),
-(14, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Complex Sentences')),
-(14, (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Hypothetical Situations'));
+-- Action: Asking and telling reasons why
+INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling reasons why'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Causative Conjunctions')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling reasons why'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Complex Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Asking and telling reasons why'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Hypothetical Situations'));
+
+-- With hard-coded id :
+
+-- Action: Bargaining
+-- INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
+-- (14, 23),
+-- (14, 24),
+-- (14, 25);
