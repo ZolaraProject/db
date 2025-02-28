@@ -10,6 +10,7 @@ INSERT INTO "actions" ("name", "level_id") VALUES
 ('Talking about hobbies', (SELECT id FROM "levels" WHERE "name" = 'Beginner'));
 
 -- Insert actions for Intermediate level
+<<<<<<< Updated upstream
 INSERT INTO "actions" ("name", "level_id") VALUES 
 ('Book a reservation', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Asking for directions', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
@@ -17,6 +18,15 @@ INSERT INTO "actions" ("name", "level_id") VALUES
 ('Ask information about a service or product', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Ordering food', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Comparing objects or people', (SELECT id FROM "levels" WHERE "name" = 'Intermediate'));
+=======
+INSERT INTO "actions" ("name", "image_url", "level_id") VALUES 
+('Make a reservation', 'make_a_reservation.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Asking for directions', 'asking_for_directions.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Tell a story', 'tell_a_story.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Ask information about a service or product', 'ask_information_about_a_service_or_product.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Ordering food', 'ordering_food.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Comparing objects or people', 'comparing_objects_or_people.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate'));
+>>>>>>> Stashed changes
 
 -- Insert actions for Advanced level
 INSERT INTO "actions" ("name", "level_id") VALUES 
