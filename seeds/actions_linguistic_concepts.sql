@@ -36,12 +36,12 @@ INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id")
 
 -- Intermediate Level Actions
 
--- Action: Book a reservation
+-- Action: Make a reservation
 INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
-((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
-((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Future Tense')),
-((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
-((SELECT id FROM "actions" WHERE "name" = 'Book a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions'));
+((SELECT id FROM "actions" WHERE "name" = 'Make a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Polite Requests')),
+((SELECT id FROM "actions" WHERE "name" = 'Make a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Future Tense')),
+((SELECT id FROM "actions" WHERE "name" = 'Make a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Simple Sentences')),
+((SELECT id FROM "actions" WHERE "name" = 'Make a reservation'), (SELECT id FROM "linguistic_concepts" WHERE "lc_name" = 'Time Expressions'));
 
 -- Action: Asking for directions
 INSERT INTO "actions_linguistic_concepts" ("action_id", "linguistic_concept_id") VALUES
