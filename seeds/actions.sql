@@ -11,7 +11,7 @@ INSERT INTO "actions" ("name", "image_url", "level_id") VALUES
 
 -- Insert actions for Intermediate level
 INSERT INTO "actions" ("name", "image_url", "level_id") VALUES 
-('Book a reservation', 'book_a_reservation.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
+('Make a reservation', 'make_a_reservation.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Asking for directions', 'asking_for_directions.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Tell a story', 'tell_a_story.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
 ('Ask information about a service or product', 'ask_information_about_a_service_or_product.webp', (SELECT id FROM "levels" WHERE "name" = 'Intermediate')),
