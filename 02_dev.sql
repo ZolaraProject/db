@@ -41,3 +41,4 @@ SELECT setval(pg_get_serial_sequence('linguistic_types', 'id'), coalesce((SELECT
 \i /docker-entrypoint-initdb.d/seeds/flashcards.sql
 \i /docker-entrypoint-initdb.d/seeds/gap_fills.sql
 \i /docker-entrypoint-initdb.d/seeds/actions_linguistic_concepts.sql
+\i /docker-entrypoint-initdb.d/seeds/videos_video_category.sql

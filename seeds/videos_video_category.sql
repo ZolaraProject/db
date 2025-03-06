@@ -84,25 +84,25 @@ INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('2
 
 -- Asking for directions = action_id: 7
 
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('daabcf77-e5f9-447e-979b-13d1739f16a8', 'connor_introduction', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('daabcf77-e5f9-447e-979b-13d1739f16a8', 'connor_introduction','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('daabcf77-e5f9-447e-979b-13d1739f16a8', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('a046cd0b-315e-432b-b7b8-a6e05c474b42', 'friend_introduction_1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('a046cd0b-315e-432b-b7b8-a6e05c474b42', 'friend_introduction_1','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('a046cd0b-315e-432b-b7b8-a6e05c474b42', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('ddbdf8c0-46d2-4ed4-a9f9-c71836493792', 'friend_introduction_2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('ddbdf8c0-46d2-4ed4-a9f9-c71836493792', 'friend_introduction_2','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('ddbdf8c0-46d2-4ed4-a9f9-c71836493792', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4e2a0359-8219-4331-846e-433d48caf093', 'friend_introduction_3', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4e2a0359-8219-4331-846e-433d48caf093', 'friend_introduction_3','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('4e2a0359-8219-4331-846e-433d48caf093', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e947fb00-db2e-4c7f-a9b4-92b763c60bb7', 'friend_introduction_4', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e947fb00-db2e-4c7f-a9b4-92b763c60bb7', 'friend_introduction_4','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('e947fb00-db2e-4c7f-a9b4-92b763c60bb7', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e747d26f-3e7c-474e-afea-1729dde03154', 'friend_introduction_5', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e747d26f-3e7c-474e-afea-1729dde03154', 'friend_introduction_5','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('e747d26f-3e7c-474e-afea-1729dde03154', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('c4c52fcf-1262-4651-9878-ba1496169b4b', 'friend_introduction_6', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('c4c52fcf-1262-4651-9878-ba1496169b4b', 'friend_introduction_6','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('c4c52fcf-1262-4651-9878-ba1496169b4b', 7, 6);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('161d12f3-afe9-4426-b81b-24707bcac90e', 'job_interview_1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('161d12f3-afe9-4426-b81b-24707bcac90e', 'job_interview_1','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('161d12f3-afe9-4426-b81b-24707bcac90e', 7, 15);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('cdeb75e2-ebc9-491d-87df-bd4c756dc6a4', 'job_interview_2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('cdeb75e2-ebc9-491d-87df-bd4c756dc6a4', 'job_interview_2','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('cdeb75e2-ebc9-491d-87df-bd4c756dc6a4', 7, 15);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('2a908b0b-a690-41e0-bdf0-9e3b0eea1152', 'first_day_at_work', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('2a908b0b-a690-41e0-bdf0-9e3b0eea1152', 'first_day_at_work','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('2a908b0b-a690-41e0-bdf0-9e3b0eea1152', 7, 15);
 
 -- Tell a story = action_id: 8
@@ -121,25 +121,25 @@ INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES 
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('789d7e08-e4b8-435a-aa7f-6031f7347784', 8,  16);
 INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('61bc45b8-3475-46d2-b091-97c08a950b24', 'love_at_first_sight','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('61bc45b8-3475-46d2-b091-97c08a950b24', 8,  16);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('0e66bda6-83fe-48a1-87d6-0f3701a227d4', 'tall_or_short', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('0e66bda6-83fe-48a1-87d6-0f3701a227d4', 'tall_or_short','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('0e66bda6-83fe-48a1-87d6-0f3701a227d4', 8, 16);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8cbff178-7c06-41b0-830e-8228e6766687', 'theater_audition', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8cbff178-7c06-41b0-830e-8228e6766687', 'theater_audition','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('8cbff178-7c06-41b0-830e-8228e6766687', 8, 11);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('c58f008c-85fa-4aef-b85a-184f37479468', 'daily_talk', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('c58f008c-85fa-4aef-b85a-184f37479468', 'daily_talk','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('c58f008c-85fa-4aef-b85a-184f37479468', 8, 16);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('d1983200-6f88-45f9-aa43-a05ce6df2fda', 'new_appartment_1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('d1983200-6f88-45f9-aa43-a05ce6df2fda', 'new_appartment_1','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('d1983200-6f88-45f9-aa43-a05ce6df2fda', 8, 16);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4eca6f7b-3e02-4746-9e6a-467d8cc4745f', 'new_appartment_2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4eca6f7b-3e02-4746-9e6a-467d8cc4745f', 'new_appartment_2','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('4eca6f7b-3e02-4746-9e6a-467d8cc4745f', 8, 16);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('a1b99c59-e636-491e-9777-ee450a8d7664', 'whats_that_word_tv_show_1', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('a1b99c59-e636-491e-9777-ee450a8d7664', 'whats_that_word_tv_show_1','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('a1b99c59-e636-491e-9777-ee450a8d7664', 8, 10);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b37c4de6-01af-4d6a-bfc4-15f710bc954c', 'whats_that_word_tv_show_2', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b37c4de6-01af-4d6a-bfc4-15f710bc954c', 'whats_that_word_tv_show_2','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('b37c4de6-01af-4d6a-bfc4-15f710bc954c', 8, 10);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('6c7ab79a-2240-4a4d-b878-49d2c94b4946', 'whats_that_word_tv_show_3', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('6c7ab79a-2240-4a4d-b878-49d2c94b4946', 'whats_that_word_tv_show_3','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('6c7ab79a-2240-4a4d-b878-49d2c94b4946', 8, 10);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8ebf0513-349a-43a3-befa-3b1d971cd2c3', 'whats_that_word_tv_show_4', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8ebf0513-349a-43a3-befa-3b1d971cd2c3', 'whats_that_word_tv_show_4','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('8ebf0513-349a-43a3-befa-3b1d971cd2c3', 8, 10);
-INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4d43cf44-26de-4fd0-b9e6-27c0d2fcf600', 'whats_that_word_tv_show_5', 0, 1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('4d43cf44-26de-4fd0-b9e6-27c0d2fcf600', 'whats_that_word_tv_show_5','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('4d43cf44-26de-4fd0-b9e6-27c0d2fcf600', 8, 10);
 
 
