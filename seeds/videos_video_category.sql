@@ -155,5 +155,19 @@ INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('4
 
 INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('3aa76190-f30b-4e2d-a4d5-1e57ce250182', 'two_types_of_mothers_in_the_morning','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('3aa76190-f30b-4e2d-a4d5-1e57ce250182', 13,  16);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('dc6706e1-cfc1-4af0-8120-9b5f2789f5fe', 'Ultimate Emergency Evacuation Guide_ Stay Safe and Prepared','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('dc6706e1-cfc1-4af0-8120-9b5f2789f5fe', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e65d3633-a4ed-4804-a008-394ac5711383', 'Save a Life_ Essential CPR Techniques for Cardiac Arrest','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('e65d3633-a4ed-4804-a008-394ac5711383', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b5e2eaa7-003a-45e3-883b-e4e81d089ac3', 'Essential Emergency Action Plan_ Prepare for Any Crisis','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('b5e2eaa7-003a-45e3-883b-e4e81d089ac3', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('04cd2653-8cbf-4b55-95d4-d9d17112f30c', 'Essential Phrases for Handling Emergencies_ Stay Safe!','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('04cd2653-8cbf-4b55-95d4-d9d17112f30c', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('bd5135f5-1ff1-4cb7-89f7-d32fe9ef8269', 'Essential Emergency Response Training for Every Workplace','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('bd5135f5-1ff1-4cb7-89f7-d32fe9ef8269', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('180f7bc4-c747-4c33-83f1-7d28d565658e', 'Emergency Call_ Inside the Cheshire Police Response','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('180f7bc4-c747-4c33-83f1-7d28d565658e', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('86c36f2c-e303-4736-99ef-1813ba6a0c2e', 'Essential Personal Protective Equipment for Workplace Safety','', 0, 1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('86c36f2c-e303-4736-99ef-1813ba6a0c2e', 13,  1);
 
 -- Asking and telling reasons why = action_id: 14
