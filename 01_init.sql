@@ -47,9 +47,16 @@ CREATE TABLE IF NOT EXISTS user_activity (
 
 CREATE TABLE IF NOT EXISTS user_conversations (
   id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL ,
+  created_at TIMESTAMP NOT NULL ,
   user_id INTEGER NOT NULL,
-  title VARCHAR(255),
-  FOREIGN KEY (user_id) REFERENCES users(id)
+  language_id INTEGER NOT NULL,
+  action_id INTEGER NOT NULL,
+  interest_id INTEGER NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (language_id) REFERENCES languages(id),
+  FOREIGN KEY (action_id) REFERENCES actions(id),
+  FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
 CREATE TYPE message_type AS ENUM ('SELF', 'SENDER');
