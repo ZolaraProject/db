@@ -193,7 +193,6 @@ CREATE TABLE IF NOT EXISTS user_videos (
     video_id VARCHAR(36) NOT NULL,
     user_id INTEGER NOT NULL,
     liked BOOLEAN NOT NULL DEFAULT FALSE,
-    not_understood BOOLEAN NOT NULL DEFAULT FALSE,
     FOREIGN KEY (video_id) REFERENCES videos(id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     UNIQUE (video_id, user_id)
