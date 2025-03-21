@@ -33,6 +33,17 @@ INSERT INTO "linguistic_types" ("lt_name") VALUES ('Descriptive Language');
 INSERT INTO "linguistic_types" ("lt_name") VALUES ('Prepositions and Place');
 SELECT setval(pg_get_serial_sequence('linguistic_types', 'id'), coalesce((SELECT MAX(id) FROM linguistic_types), 0) + 1, false);
 
+INSERT INTO report_types (report_type, criticality) VALUES
+('InappropriateContent', 'Low'),
+('CopyrightInfringement', 'Medium'),
+('Misinformation', 'Medium'),
+('Spam', 'Low'),
+('HarassmentOrBullying', 'High'),
+('PrivacyViolation', 'Medium'),
+('HateSpeech', 'High'),
+('SelfHarm', 'High'),
+('Other', 'Low');
+
 
 -- Include additional seed files
 \i /docker-entrypoint-initdb.d/seeds/interests.sql

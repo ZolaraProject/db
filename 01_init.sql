@@ -189,11 +189,35 @@ CREATE TABLE IF NOT EXISTS video_category (
     FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
+CREATE TYPE report_type AS ENUM (
+    'InappropriateContent',
+    'CopyrightInfringement',
+    'Misinformation',
+    'Spam',
+    'HarassmentOrBullying',
+    'PrivacyViolation',
+    'HateSpeech',
+    'SelfHarm',
+    'Other'
+);
+
+CREATE TYPE report_type_criticality AS ENUM (
+    'High',
+    'Medium',
+    'Low'
+);
+
+CREATE TABLE IF NOT EXISTS report_types (
+    report_type report_type NOT NULL UNIQUE,
+    criticality VARCHAR(15) NOT NULL,
+    UNIQUE (report_type, criticality)
+);
+
 CREATE TABLE IF NOT EXISTS user_videos (
     video_id VARCHAR(36) NOT NULL,
     user_id INTEGER NOT NULL,
     liked BOOLEAN NOT NULL DEFAULT FALSE,
-    not_understood BOOLEAN NOT NULL DEFAULT FALSE,
+    report_type report_type,
     FOREIGN KEY (video_id) REFERENCES videos(id),
     FOREIGN KEY (user_id) REFERENCES users(id),
     UNIQUE (video_id, user_id)
