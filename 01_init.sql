@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS user_activity (
     id SERIAL PRIMARY KEY,
-    user_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL UNIQUE,
     current_language_id INTEGER NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (current_language_id) REFERENCES languages(id)
