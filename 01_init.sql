@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS videos (
     title VARCHAR(255) NOT NULL,
     subtitle TEXT NOT NULL,
     likes INTEGER NOT NULL DEFAULT 0,
-    language_id INTEGER NOT NULL,
+    language_id INTEGER,
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
