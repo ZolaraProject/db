@@ -169,5 +169,32 @@ INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES 
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('180f7bc4-c747-4c33-83f1-7d28d565658e', 13,  1);
 INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('86c36f2c-e303-4736-99ef-1813ba6a0c2e', 'Essential Personal Protective Equipment for Workplace Safety','', 0, 1);
 INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('86c36f2c-e303-4736-99ef-1813ba6a0c2e', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('1fef3c80-1763-4ee8-a2c7-a4181207c551', 'Preparedness for All Tips for Making an Individual Emergency Plan','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('1fef3c80-1763-4ee8-a2c7-a4181207c551', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('f885b698-eb7c-4c48-9c4a-824e22fbe405', 'Why You Need an Emergency Preparedness Plan','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('f885b698-eb7c-4c48-9c4a-824e22fbe405', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e6b5bc60-77c7-440e-8bf2-8c10f7c7aa4b', 'Prepare a Family Emergency Plan  Disasters','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('e6b5bc60-77c7-440e-8bf2-8c10f7c7aa4b', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('e38b8056-3cb6-42a3-85d7-2d23d9744f0d', 'How to build an Emergency Preparedness Kit','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('e38b8056-3cb6-42a3-85d7-2d23d9744f0d', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8a65ff81-2b36-4fd0-ae96-c25270864e2d', 'Emergency Preparedness & Response Training Video','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('8a65ff81-2b36-4fd0-ae96-c25270864e2d', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('76ade7a9-c84a-4559-8b86-c4e26bf0faeb', 'How to Perform Hands-Only CPR','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('76ade7a9-c84a-4559-8b86-c4e26bf0faeb', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b037c832-5d12-4006-b096-af5b8616c91e', 'Science for Disaster Explained in 2 minutes Wildfire','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('b037c832-5d12-4006-b096-af5b8616c91e', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('af3d9179-bc2c-4592-8905-14756fe5d766', 'How to Teach Kids About Emergency Safety  One Minute Video (1)','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('af3d9179-bc2c-4592-8905-14756fe5d766', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('b647e901-a3d1-4890-b5f9-aecf011f2fe9', 'Basic First Aid for Kids  First Aid Training!','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('b647e901-a3d1-4890-b5f9-aecf011f2fe9', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8aaa623a-a98c-4a4a-ba9f-7dec89994b68', 'What you need to be prepared for emergencies','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('8aaa623a-a98c-4a4a-ba9f-7dec89994b68', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('9f37368d-85ec-4c95-9566-988238ab344a', 'Emergency Preparedness','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('9f37368d-85ec-4c95-9566-988238ab344a', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('8ca37772-48d4-482f-aad2-104770205b05', 'Emergency Response','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('8ca37772-48d4-482f-aad2-104770205b05', 13,  1);
+INSERT INTO "videos" ("id", "title", "subtitle", "likes", "language_id") VALUES ('be2c4b1a-14af-4ea5-8ce1-bc97e7e28049', 'How to Teach Kids About Emergency Safety  One Minute Video','',0,1);
+INSERT INTO "video_category" ("video_id", "action_id", "interest_id") VALUES ('be2c4b1a-14af-4ea5-8ce1-bc97e7e28049', 13,  1);
+
 
 -- Asking and telling reasons why = action_id: 14
