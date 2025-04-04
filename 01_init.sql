@@ -92,22 +92,18 @@ CREATE TABLE IF NOT EXISTS actions_linguistic_concepts (
 CREATE TABLE IF NOT EXISTS flashcards (
     id SERIAL PRIMARY KEY,
     image_url VARCHAR(255) NOT NULL,
-    interest_id INTEGER,
-    linguistic_concept_id INTEGER,
-    language_id INTEGER NOT NULL DEFAULT 1,
+    linguistic_concept_id INTEGER NOT NULL,
+    language_id INTEGER NOT NULL,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (interest_id) REFERENCES interests(id),
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
 CREATE TABLE IF NOT EXISTS gap_fills (
     id SERIAL PRIMARY KEY,
     text TEXT NOT NULL,
-    interest_id INTEGER,
-    linguistic_concept_id INTEGER,
-    language_id INTEGER NOT NULL DEFAULT 1,
+    linguistic_concept_id INTEGER NOT NULL,
+    language_id INTEGER NOT NULL,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (interest_id) REFERENCES interests(id),
     FOREIGN KEY (language_id) REFERENCES languages(id)
 );
 
@@ -147,7 +143,11 @@ CREATE TABLE IF NOT EXISTS user_exercises (
     missed BOOLEAN DEFAULT FALSE,
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (flashcard_id) REFERENCES flashcards(id),
-    FOREIGN KEY (gap_fill_id) REFERENCES gap_fills(id)
+    FOREIGN KEY (gap_fill_id) REFERENCES gap_fills(id),
+
+    CONSTRAINT unique_user_flashcard UNIQUE (user_id, flashcard_id),
+    CONSTRAINT unique_user_gapfill UNIQUE (user_id, gap_fill_id),
+    CHECK (flashcard_id IS NOT NULL OR gap_fill_id IS NOT NULL)
 );
 
 CREATE TABLE IF NOT EXISTS user_mistakes (

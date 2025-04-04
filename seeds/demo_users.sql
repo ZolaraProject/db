@@ -4,7 +4,7 @@ INSERT INTO "users" ("email", "password", "username") VALUES ('demouser@demouser
 
 -- Made a mistake on the "Sentence Structure" concept
 INSERT INTO user_mistakes (linguistic_concept_id, user_id, message_id)
-VALUES (1, 5, NULL);
+VALUES (8, 5, NULL);
 
 -- Demo User wants to learn in  English :
 -- 1. Asking and telling time:
