@@ -3,7 +3,6 @@ INSERT INTO "users" ("email", "password", "username", "role") VALUES ('admin', '
 INSERT INTO "users" ("email", "password", "username") VALUES ('test1', 'test1', 'test1');
 INSERT INTO "users" ("email", "password", "username") VALUES ('test2', 'test2', 'test2');
 INSERT INTO "users" ("email", "password", "username") VALUES ('baptiste@test.fr', '$2a$14$m55hTXR3AEBvHMVGbfK7KuGcBPlSJRqYFIlf.Nq8LUTgk1h5n3.66', 'baptiste');
-INSERT INTO "users" ("email", "password", "username") VALUES ('demouser@demouser.demo', '$2y$14$u0n/MIOTbHTh5Lrp1uz4sODAPMme02uOkxsiwmqYx8RTS3HLW.XR2', 'DemoUser');
 SELECT setval(pg_get_serial_sequence('users', 'id'), coalesce((SELECT MAX(id) FROM users), 0) + 1, false);
 
 -- Insert levels
@@ -52,3 +51,4 @@ INSERT INTO report_types (report_type, criticality) VALUES
 \i /docker-entrypoint-initdb.d/seeds/gap_fills.sql
 \i /docker-entrypoint-initdb.d/seeds/actions_linguistic_concepts.sql
 \i /docker-entrypoint-initdb.d/seeds/videos_video_category.sql
+\i /docker-entrypoint-initdb.d/seeds/demo_users.sql
