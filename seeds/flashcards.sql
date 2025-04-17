@@ -6,7 +6,7 @@
 
 -- Flashcard 1: Asking questions - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('camera-svgrepo-com.svg', 8, 1);
+VALUES ('camera-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 1 (Asking questions - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -17,7 +17,7 @@ VALUES (1, 'Camera', TRUE),
 
 -- Flashcard 2: Asking questions - French
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('coconut-tree-svgrepo-com.svg', 8, 2);
+VALUES ('coconut-tree-svgrepo-com.svg', 2, 2);
 
 -- Answers for Flashcard 2 (Asking questions - French)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -28,7 +28,7 @@ VALUES (2, 'Coconut tree', TRUE),
 
 -- Flashcard 3: Asking questions - Korean
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('diving-goggles-svgrepo-com.svg', 8, 3);
+VALUES ('diving-goggles-svgrepo-com.svg', 2, 3);
 
 -- Answers for Flashcard 3 (Asking questions - Korean)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -39,7 +39,7 @@ VALUES (3, '이름', TRUE),
 
 -- Flashcard 4: Asking questions - Spanish
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('coconut-tree-svgrepo-com.svg', 8, 4);
+VALUES ('coconut-tree-svgrepo-com.svg', 2, 4);
 
 -- Answers for Flashcard 4 (Asking questions - Spanish)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -50,7 +50,7 @@ VALUES (4, 'nombre', TRUE),
 
 -- Flashcard 5: Asking questions - Japanese
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('coconut-tree-svgrepo-com.svg', 8, 5);
+VALUES ('coconut-tree-svgrepo-com.svg', 2, 5);
 
 -- Answers for Flashcard 5 (Asking questions - Japanese)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -61,7 +61,7 @@ VALUES (5, '名前', TRUE),
 
 -- Flashcard 6: Describing objects - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('suitcase-svgrepo-com.svg', 8, 1);
+VALUES ('suitcase-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 6 (Describing objects - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -72,9 +72,9 @@ VALUES (6, 'Suitcase', TRUE),
 
 -- Flashcard 7: Using polite forms - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('coconut-tree-svgrepo-com.svg', 8, 2);
+VALUES ('coconut-tree-svgrepo-com.svg', 2, 2);
 
--- Answers for Flashcard 2 (Asking questions - French)
+-- Answers for Flashcard 7 (Asking questions - French)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
 VALUES (7, 'Coconut tree', TRUE),
        (7, 'Apple tree', FALSE),
@@ -83,7 +83,7 @@ VALUES (7, 'Coconut tree', TRUE),
 
 -- Flashcard 8: Making requests - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('diving-goggles-svgrepo-com.svg', 8, 1);
+VALUES ('diving-goggles-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 8 (Making requests - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -94,7 +94,7 @@ VALUES (8, 'Diving goggles', TRUE),
 
 -- Flashcard 9: Giving directions - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('hat-svgrepo-com.svg', 8, 1);
+VALUES ('hat-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 9 (Giving directions - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -105,7 +105,7 @@ VALUES (9, 'Hat', TRUE),
 
 -- Flashcard 10: Talking about time - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('high-speed-rail-svgrepo-com.svg', 8, 1);
+VALUES ('high-speed-rail-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 10 (Talking about time - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -116,7 +116,7 @@ VALUES (10, 'High speed train', TRUE),
 
 -- Flashcard 11: Talking about future plans - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('map-svgrepo-com.svg', 8, 1);
+VALUES ('map-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 11 (Talking about future plans - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -127,7 +127,7 @@ VALUES (11, 'Map', TRUE),
 
 -- Flashcard 12: Describing people - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('medicine-bottle-svgrepo-com.svg', 8, 1);
+VALUES ('medicine-bottle-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 12 (Describing people - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -138,7 +138,7 @@ VALUES (12, 'Medicine bottle', TRUE),
 
 -- Flashcard 13: Discussing daily routines - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('pants-svgrepo-com.svg', 8, 1);
+VALUES ('pants-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 13 (Discussing daily routines - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")
@@ -149,7 +149,7 @@ VALUES (13, 'Pants', TRUE),
 
 -- Flashcard 14: Writing formal emails - English
 INSERT INTO "flashcards" ("image_url", "linguistic_concept_id", "language_id")
-VALUES ('sailboat-svgrepo-com.svg', 8, 1);
+VALUES ('sailboat-svgrepo-com.svg', 2, 1);
 
 -- Answers for Flashcard 14 (Writing formal emails - English)
 INSERT INTO "answers" ("flashcard_id", "answer", "is_correct")

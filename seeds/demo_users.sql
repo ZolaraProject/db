@@ -2,9 +2,9 @@
 
 INSERT INTO "users" ("email", "password", "username") VALUES ('demouser@demouser.demo', '$2y$14$u0n/MIOTbHTh5Lrp1uz4sODAPMme02uOkxsiwmqYx8RTS3HLW.XR2', 'DemoUser');
 
--- Made a mistake on the "Sentence Structure" concept
+-- Made a mistake on the "Question formation" concept
 INSERT INTO user_mistakes (linguistic_concept_id, user_id, message_id)
-VALUES (8, 5, NULL);
+VALUES (2, 5, NULL);
 
 -- Demo User wants to learn in  English :
 -- 1. Asking and telling time:

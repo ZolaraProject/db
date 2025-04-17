@@ -19,17 +19,15 @@ INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Spanish',
 INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Japanese', 'japan-flag.svg', FALSE);
 SELECT setval(pg_get_serial_sequence('languages', 'id'), coalesce((SELECT MAX(id) FROM languages), 0) + 1, false);
 
--- Insert linguistic types
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Sentence Construction');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Question and Request Formation');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Tense and Time');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Comparison and Contrast');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Conditional and Causative');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Numbers and Counting');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Negation and Modality');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Politeness and Social Norms');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Descriptive Language');
-INSERT INTO "linguistic_types" ("lt_name") VALUES ('Prepositions and Place');
+-- Insert simplified types
+INSERT INTO "linguistic_types" ("lt_name") VALUES
+                                               ('Grammar and Syntax'),
+                                               ('Verb Tense and Aspect'),
+                                               ('Vocabulary and Semantics'),
+                                               ('Pragmatics and Politeness'),
+                                               ('Functional Language');
+
+-- Reset sequence
 SELECT setval(pg_get_serial_sequence('linguistic_types', 'id'), coalesce((SELECT MAX(id) FROM linguistic_types), 0) + 1, false);
 
 INSERT INTO report_types (report_type, criticality) VALUES

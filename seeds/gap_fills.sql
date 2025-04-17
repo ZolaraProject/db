@@ -7,7 +7,7 @@
 --linguistic_concept_id 1: Asking questions
 -- Gap Fill 1: What ___ your ___?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('What ___ your ___?', 8, 1);
+VALUES ('What ___ your ___?', 2, 1);
 
 -- Answers for Gap Fill 1: What ___ your ___?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -20,7 +20,7 @@ VALUES (1, 'is', TRUE, 1),
 
 -- Gap Fill 2: ___ is your ___?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('___ is your ___?', 8, 1);
+VALUES ('___ is your ___?', 2, 1);
 
 -- Answers for Gap Fill 2: ___ is your ___?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -33,7 +33,7 @@ VALUES (2, 'What', TRUE, 1),
 
 -- Gap Fill 3: ___ is your name?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('___ ___ your name?', 8, 1);
+VALUES ('___ ___ your name?', 2, 1);
 
 -- Answers for Gap Fill 3: ___ ___ your name?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -46,7 +46,7 @@ VALUES (3, 'What', TRUE, 1),
 
 -- Gap Fill 4: How ___ your ___?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('How ___ your ___?', 8, 1);
+VALUES ('How ___ your ___?', 2, 1);
 
 -- Answers for Gap Fill 4: How ___ your ___?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -59,7 +59,7 @@ VALUES (4, 'are', TRUE, 1),
 
 -- Gap Fill 5: Can ___ help ___ please ?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('Can ___ help ___ please ?', 8, 1);
+VALUES ('Can ___ help ___ please ?', 2, 1);
 
 -- Answers for Gap Fill 5: Can ___ help ___ please ?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -72,7 +72,7 @@ VALUES (5, 'you', TRUE, 1),
 
 -- Gap Fill 6: ___ you ___ Lionel Messi?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('___ you ___ Lionel Messi?', 8, 1);
+VALUES ('___ you ___ Lionel Messi?', 2, 1);
 
 -- Answers for Gap Fill 6: ___ you ___ Lionel Messi?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -85,7 +85,7 @@ VALUES (6, 'Do', TRUE, 1),
 
 -- Gap Fill 7: ___ you ___ to the cinema?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('___ you ___ to the cinema?', 8, 1);
+VALUES ('___ you ___ to the cinema?', 2, 1);
 
 -- Answers for Gap Fill 7: ___ you ___ to the cinema?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
@@ -98,7 +98,7 @@ VALUES (7, 'Do', TRUE, 1),
 
 -- Gap Fill 8: ___ you ___ to the gym?
 INSERT INTO "gap_fills" ("text", "linguistic_concept_id", "language_id")
-VALUES ('___ you ___ to the gym?', 8, 1);
+VALUES ('___ you ___ to the gym?', 2, 1);
 
 -- Answers for Gap Fill 8: ___ you ___ to the gym?
 INSERT INTO "answers" ("gap_fill_id", "answer", "is_correct", "answer_order")
