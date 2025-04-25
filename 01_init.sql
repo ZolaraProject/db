@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS user_activity (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL UNIQUE,
     current_language_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (current_language_id) REFERENCES languages(id)
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS user_conversations (
   language_id INTEGER NOT NULL,
   action_id INTEGER NOT NULL,
   interest_id INTEGER NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
   FOREIGN KEY (language_id) REFERENCES languages(id),
   FOREIGN KEY (action_id) REFERENCES actions(id),
   FOREIGN KEY (interest_id) REFERENCES interests(id)
@@ -121,7 +121,7 @@ CREATE TABLE IF NOT EXISTS user_profiles (
     user_id INTEGER NOT NULL,
     language_id INTEGER NOT NULL,
     action_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (language_id) REFERENCES languages(id),
     FOREIGN KEY (action_id) REFERENCES actions(id)
 );
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS user_interests (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL,
     interest_id INTEGER NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
@@ -141,7 +141,7 @@ CREATE TABLE IF NOT EXISTS user_exercises (
     gap_fill_id INTEGER,
     completed BOOLEAN DEFAULT FALSE,
     missed BOOLEAN DEFAULT FALSE,
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (flashcard_id) REFERENCES flashcards(id),
     FOREIGN KEY (gap_fill_id) REFERENCES gap_fills(id),
 
@@ -156,7 +156,7 @@ CREATE TABLE IF NOT EXISTS user_mistakes (
     user_id INTEGER NOT NULL,
     message_id INTEGER,
     FOREIGN KEY (linguistic_concept_id) REFERENCES linguistic_concepts(id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (message_id) REFERENCES conversations_messages(id)
 );
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS events (
     event_type event_type NOT NULL,
     message TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS videos (
@@ -219,6 +219,6 @@ CREATE TABLE IF NOT EXISTS user_videos (
     liked BOOLEAN NOT NULL DEFAULT FALSE,
     report_type report_type DEFAULT NULL,
     FOREIGN KEY (video_id) REFERENCES videos(id),
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     UNIQUE (video_id, user_id)
 );
