@@ -13,7 +13,7 @@ SELECT setval(pg_get_serial_sequence('levels', 'id'), coalesce((SELECT MAX(id) F
 
 -- Insert languages
 INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('English', 'english-flag.svg', TRUE);
-INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('French', 'french-flag.svg', TRUE);
+INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('French', 'french-flag.svg', FALSE);
 INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Korean', 'korean-flag.svg', FALSE);
 INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Spanish', 'spanish-flag.svg', FALSE);
 INSERT INTO "languages" ("name", "image_url", "is_available") VALUES ('Japanese', 'japan-flag.svg', FALSE);

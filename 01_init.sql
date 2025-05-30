@@ -59,12 +59,12 @@ CREATE TABLE IF NOT EXISTS user_conversations (
   FOREIGN KEY (interest_id) REFERENCES interests(id)
 );
 
-CREATE TYPE message_type AS ENUM ('SELF', 'SENDER');
+CREATE TYPE message_type AS ENUM ('PAL', 'USER');
 
 CREATE TABLE IF NOT EXISTS conversations_messages (
   id SERIAL PRIMARY KEY,
   user_conversations_id INTEGER NOT NULL,
-  content VARCHAR(255),
+  content TEXT,
   message_type message_type NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   FOREIGN KEY (user_conversations_id) REFERENCES user_conversations(id)
